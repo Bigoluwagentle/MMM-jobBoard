@@ -1,0 +1,114 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#navbar{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        border-bottom: 2px solid #134544;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: 0px 0px 10px #134544;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        > nav{
+            
+            > h1{
+                font-size: 20px;
+                color: #134544;
+            }
+            h1::first-letter{
+                color: orange;
+            }
+            > aside{
+                display: flex;
+                align-items: center;
+                > a{
+                    margin-right: 30px;
+                    border-bottom: 2px solid transparent;
+                    &:hover{
+                        color: #134544;
+                        border-bottom: 2px solid orange;
+                    }
+                }
+                .active{
+                    border-bottom: 2px solid #134544;
+                    color: orange;
+                }
+                > div{
+                    display: flex;
+                    align-items: center;
+                    border: 2px solid #134544;
+                    border-radius: 20px;
+                    padding: 5px;
+                    justify-content: space-between;
+                    > input{
+                        display: inline-block;
+                        border: none;
+                        height: 30px;
+                        padding: 5px;
+                        outline: none;
+                        flex: 1;
+                        width: 200px;
+                        transition: width 1s;
+                        margin: 0px 5px;
+                        &:focus{
+                            width: 300px;
+                        }
+                    }
+                }
+            }
+            > button{
+                padding: 8px 20px;
+                background-color: #134544;
+                color: white;
+                font-size: 13px;
+                border-radius: 5px;
+                transition: background 1s;
+                &:hover{
+                    background: gray;
+                }
+            }
+            > summary{
+                background-color: orange;
+                padding: 10px;
+                color: red;
+                border-radius: 3px;
+                list-style-type: none;
+                position: absolute;
+                width: 200px;
+                display: none;
+            }
+        }
+        nav.hamburger{
+            display: none;
+        }
+    }
+}
+#drop-down:hover summary{
+    display: block;
+    cursor: pointer;
+}
+@media screen and (max-width: 890px){
+    #navbar{
+        header{
+            .mob{
+                display: none;
+            }
+            nav.hamburger{
+                display: block;
+            }
+        }
+    }
+}
