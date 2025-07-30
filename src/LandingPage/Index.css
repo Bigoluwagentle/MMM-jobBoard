@@ -102,6 +102,9 @@ marquee + footer{
                 width: 100%;
             > .dashboard{
                 width: 100%;
+                > h3{
+                    text-align: left;
+                }
             }
         }
     }
